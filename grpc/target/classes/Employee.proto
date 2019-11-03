@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+package com.learning;
+
+message Employee {
+  string name = 1;
+  int32 age = 2;
+  string dateOfBirth = 3;
+  string department = 4;
+}
+
+message EmployeeRespnse {
+  string message = 1;
+}
+
+service EmployeeService {
+  rpc getEmployee (Employee) returns (EmployeeRespnse);
+}
